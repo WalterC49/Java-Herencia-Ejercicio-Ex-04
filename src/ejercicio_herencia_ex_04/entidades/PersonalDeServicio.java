@@ -11,7 +11,7 @@ import ejercicio_herencia_ex_04.enumeraciones.EstadoCivil;
  *
  * @author Walter
  */
-public class PersonalDeServicio extends Empleado{
+public final class PersonalDeServicio extends Empleado{
     private String seccion;
 
     public PersonalDeServicio() {
@@ -22,9 +22,14 @@ public class PersonalDeServicio extends Empleado{
         this.seccion = seccion;
     }
 
+    
+    public void setSeccion(String seccion){
+        this.seccion = seccion;
+    }
+    
     @Override
     public String toString() {
         System.out.println(super.toString());
-        return "PersonalDeServicio{" + "seccion=" + seccion + '}';
+        return "Sección: " + seccion;
     }
 }

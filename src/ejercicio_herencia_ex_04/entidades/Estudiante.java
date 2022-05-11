@@ -11,7 +11,7 @@ import ejercicio_herencia_ex_04.enumeraciones.EstadoCivil;
  *
  * @author Walter
  */
-public class Estudiante extends Persona{
+public final class Estudiante extends Persona{
     private String curso;
 
     public Estudiante() {
@@ -22,9 +22,14 @@ public class Estudiante extends Persona{
         this.curso = curso;
     }
 
+    
+    public void setCurso(String curso){
+        this.curso = curso;
+    }
+    
     @Override
     public String toString() {
         System.out.println(super.toString());
-        return "Estudiante{" + "curso=" + curso + '}';
+        return "Curso: " + curso;
     }
 }

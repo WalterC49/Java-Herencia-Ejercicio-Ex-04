@@ -39,29 +39,32 @@ public class MainServicio {
                 Menu(personas);
                 break;
             case "2":
-                Menu(personas);
-                break;
             case "3":
-                Menu(personas);
-                break;
             case "4":
+                personas.add(PersonaServicio.IngresarNuevaPersona(personas, op));
                 Menu(personas);
                 break;
             case "5":
+                PersonaServicio.CambiarEstadoCivil(personas);
                 Menu(personas);
                 break;
             case "6":
+                EmpleadoServicio.ReasignarDespacho(personas);
                 Menu(personas);
                 break;
             case "7":
+                EstudianteServicio.MatricularEnNuevoCurso(personas);
                 Menu(personas);
                 break;
             case "8":
+                ProfesorServicio.CambiarDepartamento(personas);
                 Menu(personas);
                 break;
             case "9":
+                PersonalDSServicio.TrasladarSeccion(personas);
                 Menu(personas);
             case "10":
+                PersonaServicio.MostrarPersonas(personas);
                 Menu(personas);
             case "11":
                 System.out.println("Hasta prontos.");
@@ -87,17 +90,29 @@ public class MainServicio {
         
         switch (op) {
             case "1":
+                PersonaServicio.CambiarEstadoCivil(listaTest);
                 Menu2(listaTest);
+                break;
             case "2":
+                EmpleadoServicio.ReasignarDespacho(listaTest);
                 Menu2(listaTest);
+                break;
             case "3":
+                EstudianteServicio.MatricularEnNuevoCurso(listaTest);
                 Menu2(listaTest);
+                break;
             case "4":
+                ProfesorServicio.CambiarDepartamento(listaTest);
                 Menu2(listaTest);
+                break;
             case "5":
+                PersonalDSServicio.TrasladarSeccion(listaTest);
                 Menu2(listaTest);
+                break;
             case "6":
+                PersonaServicio.MostrarPersonas(listaTest);
                 Menu2(listaTest);
+                break;
             case "7":
                 return;
             default:
@@ -106,4 +121,22 @@ public class MainServicio {
         }
     }
     
+    public static boolean ConfirmarNumEntero(String respuesta,int largoLista){
+        
+        for(char i='!';i<'/';i++){
+            if(respuesta.contains(String.valueOf(i))){
+                return false;
+            }
+        }
+        
+        for(char i=':';i<'~';i++){
+            if(respuesta.contains(String.valueOf(i))){
+                return false;
+            }
+        }
+        
+        int r=Integer.parseInt(respuesta);
+        
+        return !(r<1 || r>largoLista);
+    }
 }

@@ -11,7 +11,7 @@ import ejercicio_herencia_ex_04.enumeraciones.EstadoCivil;
  *
  * @author Walter
  */
-public class Empleado extends Persona{
+public abstract class Empleado extends Persona{
     protected Integer anioIncorporacion;
     protected Integer numDespacho;
 
@@ -24,9 +24,13 @@ public class Empleado extends Persona{
         this.numDespacho = numDespacho;
     }
 
+    public void setNumDespacho(Integer numDespacho){
+        this.numDespacho = numDespacho;
+    }
+    
     @Override
     public String toString() {
         System.out.println(super.toString());
-        return "Empleado{" + "anioIncorporacion=" + anioIncorporacion + ", numDespacho=" + numDespacho + '}';
+        return "Año de incorporación: " + anioIncorporacion + ", número de despacho: " + numDespacho;
     }
 }

@@ -27,9 +27,12 @@ public abstract class Persona {
         this.estadoCivil = estadoCivil;
     }
 
+    public void setEstadoCivil(EstadoCivil estadoCivil){
+        this.estadoCivil = estadoCivil;
+    }
+    
     @Override
     public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", numeroDeID=" + numeroDeID + ", estadoCivil=" + estadoCivil.getValor()
-                + '}';
+        return "Nombre: " + nombre + ", apellido: " + apellido + ", numero de identificación: " + numeroDeID + ", estado civil: " + estadoCivil.getValor();
     }
 }

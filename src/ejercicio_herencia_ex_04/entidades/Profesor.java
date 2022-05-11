@@ -11,7 +11,7 @@ import ejercicio_herencia_ex_04.enumeraciones.EstadoCivil;
  *
  * @author Walter
  */
-public class Profesor extends Empleado{
+public final class Profesor extends Empleado{
     private String departamento;
 
     public Profesor() {
@@ -22,8 +22,14 @@ public class Profesor extends Empleado{
         this.departamento = departamento;
     }
 
+    
+    public void setDepartamento(String departamento){
+        this.departamento = departamento;
+    }
+    
     @Override
     public String toString() {
-        return "Profesor{" + "departamento=" + departamento + '}';
+        System.out.println(super.toString());
+        return "Departamento: " + departamento;
     }
 }
